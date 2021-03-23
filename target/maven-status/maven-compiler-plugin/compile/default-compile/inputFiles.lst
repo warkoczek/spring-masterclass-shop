@@ -1,0 +1,15 @@
+C:\Users\andre\IdeaProjects\spring-masterclass\src\main\java\pl\training\shop\Application.java
+C:\Users\andre\IdeaProjects\spring-masterclass\src\main\java\pl\training\shop\payments\PaymentRequest.java
+C:\Users\andre\IdeaProjects\spring-masterclass\src\main\java\pl\training\shop\payments\LocalMoney.java
+C:\Users\andre\IdeaProjects\spring-masterclass\src\main\java\pl\training\shop\payments\PaymentRepository.java
+C:\Users\andre\IdeaProjects\spring-masterclass\src\main\java\pl\training\shop\payments\PaymentStatus.java
+C:\Users\andre\IdeaProjects\spring-masterclass\src\main\java\pl\training\shop\payments\PaymentService.java
+C:\Users\andre\IdeaProjects\spring-masterclass\src\main\java\pl\training\shop\payments\PaymentConfiguration.java
+C:\Users\andre\IdeaProjects\spring-masterclass\src\main\java\pl\training\shop\payments\LogPayments.java
+C:\Users\andre\IdeaProjects\spring-masterclass\src\main\java\pl\training\shop\payments\PaymentIdGenerator.java
+C:\Users\andre\IdeaProjects\spring-masterclass\src\main\java\pl\training\shop\payments\FakePaymentService.java
+C:\Users\andre\IdeaProjects\spring-masterclass\src\main\java\pl\training\shop\payments\PaymentRepositoryImpl.java
+C:\Users\andre\IdeaProjects\spring-masterclass\src\main\java\pl\training\shop\payments\IncrementalPaymentIdGenerator.java
+C:\Users\andre\IdeaProjects\spring-masterclass\src\main\java\pl\training\shop\payments\PaymentConsoleLogger.java
+C:\Users\andre\IdeaProjects\spring-masterclass\src\main\java\pl\training\shop\payments\UUIDPaymentIdGenerator.java
+C:\Users\andre\IdeaProjects\spring-masterclass\src\main\java\pl\training\shop\payments\Payment.java
