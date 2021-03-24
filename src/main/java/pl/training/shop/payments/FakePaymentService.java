@@ -6,6 +6,7 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.java.Log;
 import org.springframework.context.ApplicationEventPublisher;
 import org.springframework.stereotype.Service;
+import pl.training.shop.common.profiler.ExecutionTime;
 
 import java.time.Instant;
 @Log
@@ -17,6 +18,7 @@ public class FakePaymentService implements PaymentService {
     private final PaymentRepository paymentRepository;
     private final ApplicationEventPublisher eventPublisher;
 
+    @ExecutionTime
     @LogPayments
     @Override
     public Payment process(PaymentRequest paymentRequest){
@@ -27,8 +29,8 @@ public class FakePaymentService implements PaymentService {
                 .status(PaymentStatus.STARTED)
                 .build();
         eventPublisher.publishEvent(new PaymentStatusChangedEvent(this, payment));
-        throw new RuntimeException();
-        //return paymentRepository.save(payment);
+
+        return paymentRepository.save(payment);
 
     }
     public void init(){

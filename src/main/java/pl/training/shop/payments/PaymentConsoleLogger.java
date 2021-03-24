@@ -4,9 +4,11 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.java.Log;
 import org.aspectj.lang.annotation.*;
 import org.springframework.context.MessageSource;
+import org.springframework.core.annotation.Order;
 
 import java.util.Locale;
 
+@Order(5)
 @Aspect
 @Log
 @RequiredArgsConstructor
