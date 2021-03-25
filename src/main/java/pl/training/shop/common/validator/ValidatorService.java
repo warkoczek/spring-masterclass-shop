@@ -13,8 +13,8 @@ public class ValidatorService {
 
     private final Validator validator;
 
-    public <D, E extends RuntimeException> void validate(D object, Class<E> exceptionType) throws E, IllegalAccessException, InvocationTargetException, InstantiationException, NoSuchMethodException {
-        Set<ConstraintViolation<D>> violations = validator.validate(object);
+    public <O, E extends RuntimeException> void validate(O object, Class<E> exceptionType) throws E {
+        Set<ConstraintViolation<O>> violations = validator.validate(object);
         if(!violations.isEmpty()){
             try {
                 Constructor<E> exception = exceptionType.getDeclaredConstructor();

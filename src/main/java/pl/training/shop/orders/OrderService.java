@@ -2,6 +2,8 @@ package pl.training.shop.orders;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
+import pl.training.shop.common.validator.InvalidOrderException;
+import pl.training.shop.common.validator.Validate;
 
 @RequiredArgsConstructor
 @Service
@@ -9,7 +11,7 @@ public class OrderService {
 
     private final OrderRepository orderRepository;
 
-    public Order add(Order order){
+    public Order add( Order order){
         return orderRepository.save(order);
     }
 
