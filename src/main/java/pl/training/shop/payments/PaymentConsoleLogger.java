@@ -17,22 +17,22 @@ public class PaymentConsoleLogger {
     private static final String MESSAGE_KEY = "paymentInfo";
 
     private final MessageSource messageSource;
-
+    @Pointcut("@annotation(LogPayments)")
     public void logPayments(){
     }
-
+    @Before(value = "logPayments() && args(paymentRequest)")
     public void beforePayment(PaymentRequest paymentRequest){
         log.info("New payment request " + paymentRequest);
     }
-
+    @After("logPayments()")
     public void afterPayment(){
         log.info("After payment");
     }
-
+    @AfterThrowing(value = "logPayments()", throwing = "exception")
     public void onException(RuntimeException exception){
         log.info("Payment exception " + exception.getClass().getSimpleName());
     }
-
+    @AfterReturning(value = "logPayments()", returning = "payment")
     public void log(Payment payment){
         log.info(createLogEntry(payment));
     }
