@@ -18,6 +18,7 @@ import java.time.Instant;
 @EqualsAndHashCode(exclude = "id")
 public class Payment {
     @Id
+    @GeneratedValue
     private String id;
     @Columns(columns = {
           @Column(name = "currency", length = 3),
