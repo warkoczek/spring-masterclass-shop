@@ -13,8 +13,8 @@ public class ProductService {
 
     @Retry
     public Product add(Product product){
-        //return productRepository.save(product);
-        throw new RuntimeException();
+        return productRepository.save(product);
+        //throw new RuntimeException();
     }
 
     public PagedResult<Product> getAll(int pageNumber, int pageSize){
