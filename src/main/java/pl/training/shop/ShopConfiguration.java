@@ -58,6 +58,7 @@ public class ShopConfiguration {
         sessionBean.setPackagesToScan("pl.training.shop");
         return sessionBean;
     }
+
     @Bean
     public PlatformTransactionManager transactionManager(SessionFactory sessionFactory){
         return new HibernateTransactionManager(sessionFactory);

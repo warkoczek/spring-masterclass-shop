@@ -16,8 +16,8 @@ public class PaymentConfiguration {
     }
 
     @Bean
-    public PaymentRepository paymentRepository(SessionFactory sessionFactory){
-        return new HibernatePaymentRepository(sessionFactory);
+    public PaymentRepository paymentRepository(){
+        return new HashMapPaymentRepository();
     }
 
     @Bean(initMethod = "init", destroyMethod = "destroy")
