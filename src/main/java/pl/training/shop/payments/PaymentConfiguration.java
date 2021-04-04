@@ -16,11 +16,6 @@ public class PaymentConfiguration {
     }
 
     @Bean
-    public PaymentIdGenerator uuidPaymentIdGenerator(){
-        return new IncrementalPaymentIdGenerator();
-    }
-
-    @Bean
     public PaymentRepository paymentRepository(SessionFactory sessionFactory){
         return new HibernatePaymentRepository(sessionFactory);
     }

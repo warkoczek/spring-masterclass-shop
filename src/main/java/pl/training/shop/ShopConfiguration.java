@@ -2,6 +2,7 @@ package pl.training.shop;
 
 import com.zaxxer.hikari.HikariDataSource;
 import org.hibernate.SessionFactory;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.config.PropertiesFactoryBean;
 import org.springframework.context.MessageSource;
 import org.springframework.context.annotation.Bean;
@@ -41,12 +42,14 @@ public class ShopConfiguration {
         dataSource.setDriverClassName(environment.getProperty("database.driver"));
         return dataSource;
     }
+
     @Bean
     public PropertiesFactoryBean hibernateProperties(){
         PropertiesFactoryBean factoryBean = new PropertiesFactoryBean();
         factoryBean.setLocation(new ClassPathResource("hibernate.properties"));
         return factoryBean;
     }
+
     @Bean
     public LocalSessionFactoryBean sessionFactory(DataSource dataSource, Properties hibernateProperties){
         LocalSessionFactoryBean sessionBean = new LocalSessionFactoryBean();
