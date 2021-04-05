@@ -15,17 +15,21 @@ public class PaymentConfiguration {
     }
 
     @Bean
-    public PaymentRepository paymentRepository(){
-        return new HashMapPaymentRepository();
+    public PaymentRepository paymentRepository(SessionFactory sessionFactory){
+        return new HibernatePaymentRepository(sessionFactory);
     }
 
-    @Bean(initMethod = "init", destroyMethod = "destroy")
-    public PaymentService fakePaymentService(PaymentIdGenerator paymentIdGenerator, PaymentRepository paymentRepository
+    @Bean
+    public PaymentService paymentService(PaymentIdGenerator paymentIdGenerator, PaymentRepository paymentRepository
     , ApplicationEventPublisher eventPublisher){
         return new FakePaymentService(paymentIdGenerator, paymentRepository, eventPublisher);
     }
     @Bean
     public PaymentConsoleLogger paymentConsoleLogger(MessageSource messageSource){
         return new PaymentConsoleLogger(messageSource);
+    }
+    @Bean
+    public PaymentStatusChangedListener paymentStatusChangedListener(){
+        return new PaymentStatusChangedListener();
     }
 }

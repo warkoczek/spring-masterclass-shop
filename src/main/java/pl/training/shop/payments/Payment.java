@@ -21,7 +21,7 @@ public class Payment {
     private String id;
     @Columns(columns = {
           @Column(name = "currency", length = 3),
-          @Column(name = "value")
+          @Column(name = "value", length = 15)
     })
     private FastMoney money;
     private Instant timestamp;
