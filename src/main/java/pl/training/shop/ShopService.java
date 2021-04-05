@@ -11,7 +11,7 @@ import pl.training.shop.payments.PaymentRequest;
 import pl.training.shop.payments.PaymentService;
 import pl.training.shop.products.Product;
 import pl.training.shop.products.ProductService;
-
+@Transactional
 @Service
 @RequiredArgsConstructor
 public class ShopService {
