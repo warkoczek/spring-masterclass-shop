@@ -5,6 +5,7 @@ import org.hibernate.annotations.Columns;
 import org.javamoney.moneta.FastMoney;
 
 import javax.persistence.*;
+@NamedQuery(name = Product.SELECT_PRODUCTS, query = "select p from Product p")
 @Table(name = "products", indexes = @Index(name = "product_type", columnList = "type"))
 @Entity
 @Data
@@ -13,6 +14,8 @@ import javax.persistence.*;
 @NoArgsConstructor
 @AllArgsConstructor
 public class Product {
+
+    public static final String SELECT_PRODUCTS = "selectProducts";
 
     @Id
     @GeneratedValue

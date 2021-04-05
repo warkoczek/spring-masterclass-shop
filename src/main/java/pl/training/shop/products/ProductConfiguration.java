@@ -8,7 +8,7 @@ public class ProductConfiguration {
 
     @Bean
     public ProductRepository productRepository(){
-        return new HashMapProductRepository();
+        return new JpaProductRepository();
     }
 
     @Bean
