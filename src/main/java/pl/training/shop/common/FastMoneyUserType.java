@@ -2,6 +2,7 @@ package pl.training.shop.common;
 
 import org.hibernate.HibernateException;
 import org.hibernate.engine.spi.SharedSessionContractImplementor;
+import org.hibernate.type.DoubleType;
 import org.hibernate.type.LongType;
 import org.hibernate.type.StringType;
 import org.hibernate.type.Type;
@@ -12,6 +13,7 @@ import java.io.Serializable;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.Objects;
 
 public class FastMoneyUserType implements CompositeUserType {
 
@@ -20,75 +22,69 @@ public class FastMoneyUserType implements CompositeUserType {
     }
 
     public Type[] getPropertyTypes() {
-        return new Type[]{StringType.INSTANCE, LongType.INSTANCE};
+        return new Type[]{StringType.INSTANCE, DoubleType.INSTANCE};
     }
 
     @Override
-    public Object getPropertyValue(Object component, int propertyIndex) throws HibernateException {
+    public Class<FastMoney> returnedClass() {
+        return FastMoney.class;
+    }
+
+    @Override
+    public Object getPropertyValue(Object component, int propertyIndex){
         if(component == null){
             return null;
         }
-        FastMoney fastMoney = (FastMoney) component;
+        var money = (FastMoney) component;
         switch (propertyIndex){
             case 0:
-                return fastMoney.getCurrency().getCurrencyCode();
+                return money.getCurrency().getCurrencyCode();
             case 1:
-                return fastMoney.getNumber().numberValue(Long.class);
+                return money.getNumber().numberValue(Double.class);
             default:
-                throw new HibernateException("Invalid property index [" + propertyIndex + " ]");
+                throw new HibernateException("Invalid property index [" + propertyIndex + "]");
         }
     }
 
     @Override
-    public void setPropertyValue(Object component, int propertyIndex, Object value) throws HibernateException {
+    public void setPropertyValue(Object component, int propertyIndex, Object value) {
         if(component == null){
             return;
         }
         throw new HibernateException("Called setPropertyValue on an immutable type {" + component.getClass() +"}");
     }
-
     @Override
-    public Class returnedClass() {
-        return FastMoney.class;
-    }
-
-    @Override
-    public boolean equals(Object x, Object y) throws HibernateException {
-        return false;
-    }
-
-    @Override
-    public int hashCode(Object x) throws HibernateException {
-        return 0;
-    }
-
-    @Override
-    public Object nullSafeGet(ResultSet rs, String[] names, SharedSessionContractImplementor session, Object owner) throws HibernateException, SQLException {
+    public Object nullSafeGet(ResultSet resultSet, String[] names, SharedSessionContractImplementor session, Object owner) throws SQLException {
         assert names.length == 2;
         FastMoney money = null;
-        String currency = rs.getString(names[0]);
-        if(!rs.wasNull()){
-            Long amount = rs.getLong(names[1]);
+        var currency = resultSet.getString(names[0]);
+        if(!resultSet.wasNull()){
+            var amount = resultSet.getDouble(names[1]);
             money = FastMoney.of(amount, currency);
         }
         return money;
     }
 
     @Override
-    public void nullSafeSet(PreparedStatement st, Object value, int property, SharedSessionContractImplementor session) throws HibernateException, SQLException {
+    public void nullSafeSet(PreparedStatement preparedStatement, Object value, int property, SharedSessionContractImplementor session) throws SQLException {
         if(null == value){
-            st.setNull(property, StringType.INSTANCE.sqlType());
-            st.setNull(property + 1, StringType.INSTANCE.sqlType());
+            preparedStatement.setNull(property, StringType.INSTANCE.sqlType());
+            preparedStatement.setNull(property + 1, StringType.INSTANCE.sqlType());
         }else{
             FastMoney amount = (FastMoney) value;
-            st.setString(property, amount.getCurrency().getCurrencyCode());
-            st.setLong(property + 1, amount.getNumber().numberValue(Long.class));
+            preparedStatement.setString(property, amount.getCurrency().getCurrencyCode());
+            preparedStatement.setDouble(property + 1, amount.getNumber().numberValue(Double.class));
         }
     }
 
     @Override
-    public Object deepCopy(Object value) throws HibernateException {
-        return null;
+    public boolean equals(Object o1, Object o2){
+        return Objects.equals(o1, o2);
+    }
+
+    @Override
+    public int hashCode(Object value) throws HibernateException {
+        return value.hashCode();
     }
 
     @Override
@@ -97,17 +93,22 @@ public class FastMoneyUserType implements CompositeUserType {
     }
 
     @Override
-    public Serializable disassemble(Object value, SharedSessionContractImplementor session) throws HibernateException {
-        return null;
+    public Object deepCopy(Object value) throws HibernateException {
+        return value;
     }
 
     @Override
-    public Object assemble(Serializable cached, SharedSessionContractImplementor session, Object owner) throws HibernateException {
-        return null;
+    public Serializable disassemble(Object value, SharedSessionContractImplementor session) {
+        return (Serializable) value;
     }
 
     @Override
-    public Object replace(Object original, Object target, SharedSessionContractImplementor session, Object owner) throws HibernateException {
-        return null;
+    public Object assemble(Serializable cached, SharedSessionContractImplementor paramSessionImplementor, Object owner) {
+        return cached;
+    }
+
+    @Override
+    public Object replace(Object original, Object target, SharedSessionContractImplementor session, Object owner) {
+        return original;
     }
 }

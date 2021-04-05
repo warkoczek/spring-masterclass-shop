@@ -1,5 +1,6 @@
 package pl.training.shop.payments;
 
+import org.hibernate.SessionFactory;
 import org.springframework.context.ApplicationEventPublisher;
 import org.springframework.context.MessageSource;
 import org.springframework.context.annotation.Bean;
