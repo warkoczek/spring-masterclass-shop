@@ -2,13 +2,13 @@ C:\Users\andre\IdeaProjects\spring-masterclass\src\main\java\pl\training\shop\pr
 C:\Users\andre\IdeaProjects\spring-masterclass\src\main\java\pl\training\shop\common\validator\ModelValidator.java
 C:\Users\andre\IdeaProjects\spring-masterclass\src\main\java\pl\training\shop\common\validator\Validate.java
 C:\Users\andre\IdeaProjects\spring-masterclass\src\main\java\pl\training\shop\payments\PaymentRequest.java
+C:\Users\andre\IdeaProjects\spring-masterclass\src\main\java\pl\training\shop\products\JpaProductRepository.java
 C:\Users\andre\IdeaProjects\spring-masterclass\src\main\java\pl\training\shop\payments\LocalMoney.java
 C:\Users\andre\IdeaProjects\spring-masterclass\src\main\java\pl\training\shop\payments\PaymentStatus.java
 C:\Users\andre\IdeaProjects\spring-masterclass\src\main\java\pl\training\shop\payments\PaymentConfiguration.java
 C:\Users\andre\IdeaProjects\spring-masterclass\src\main\java\pl\training\shop\common\validator\ValidatorService.java
 C:\Users\andre\IdeaProjects\spring-masterclass\src\main\java\pl\training\shop\products\ProductService.java
 C:\Users\andre\IdeaProjects\spring-masterclass\src\main\java\pl\training\shop\common\profiler\Profiler.java
-C:\Users\andre\IdeaProjects\spring-masterclass\src\main\java\pl\training\shop\payments\HashMapPaymentRepository.java
 C:\Users\andre\IdeaProjects\spring-masterclass\src\main\java\pl\training\shop\orders\OrderRepository.java
 C:\Users\andre\IdeaProjects\spring-masterclass\src\main\java\pl\training\shop\orders\HashMapOrderRepository.java
 C:\Users\andre\IdeaProjects\spring-masterclass\src\main\java\pl\training\shop\products\Product.java
@@ -18,6 +18,7 @@ C:\Users\andre\IdeaProjects\spring-masterclass\src\main\java\pl\training\shop\or
 C:\Users\andre\IdeaProjects\spring-masterclass\src\main\java\pl\training\shop\payments\IncrementalPaymentIdGenerator.java
 C:\Users\andre\IdeaProjects\spring-masterclass\src\main\java\pl\training\shop\orders\OrderNotFoundException.java
 C:\Users\andre\IdeaProjects\spring-masterclass\src\main\java\pl\training\shop\common\CommonConfiguration.java
+C:\Users\andre\IdeaProjects\spring-masterclass\src\main\java\pl\training\shop\products\ProductConfiguration.java
 C:\Users\andre\IdeaProjects\spring-masterclass\src\main\java\pl\training\shop\orders\OrderConfiguration.java
 C:\Users\andre\IdeaProjects\spring-masterclass\src\main\java\pl\training\shop\common\profiler\ExecutionTime.java
 C:\Users\andre\IdeaProjects\spring-masterclass\src\main\java\pl\training\shop\payments\Payment.java
@@ -25,10 +26,12 @@ C:\Users\andre\IdeaProjects\spring-masterclass\src\main\java\pl\training\shop\Sh
 C:\Users\andre\IdeaProjects\spring-masterclass\src\main\java\pl\training\shop\orders\Order.java
 C:\Users\andre\IdeaProjects\spring-masterclass\src\main\java\pl\training\shop\payments\IdGenerator.java
 C:\Users\andre\IdeaProjects\spring-masterclass\src\main\java\pl\training\shop\Application.java
+C:\Users\andre\IdeaProjects\spring-masterclass\src\main\java\pl\training\shop\orders\JpaOrderRepository.java
 C:\Users\andre\IdeaProjects\spring-masterclass\src\main\java\pl\training\shop\common\LoggingBeanPostProcessor.java
 C:\Users\andre\IdeaProjects\spring-masterclass\src\main\java\pl\training\shop\payments\PaymentRepository.java
 C:\Users\andre\IdeaProjects\spring-masterclass\src\main\java\pl\training\shop\payments\PaymentService.java
 C:\Users\andre\IdeaProjects\spring-masterclass\src\main\java\pl\training\shop\products\ProductRepository.java
+C:\Users\andre\IdeaProjects\spring-masterclass\src\main\java\pl\training\shop\products\HibernateProductRepository.java
 C:\Users\andre\IdeaProjects\spring-masterclass\src\main\java\pl\training\shop\payments\LogPayments.java
 C:\Users\andre\IdeaProjects\spring-masterclass\src\main\java\pl\training\shop\payments\PaymentIdGenerator.java
 C:\Users\andre\IdeaProjects\spring-masterclass\src\main\java\pl\training\shop\common\ContextListener.java
@@ -39,5 +42,6 @@ C:\Users\andre\IdeaProjects\spring-masterclass\src\main\java\pl\training\shop\pa
 C:\Users\andre\IdeaProjects\spring-masterclass\src\main\java\pl\training\shop\payments\PaymentConsoleLogger.java
 C:\Users\andre\IdeaProjects\spring-masterclass\src\main\java\pl\training\shop\ShopService.java
 C:\Users\andre\IdeaProjects\spring-masterclass\src\main\java\pl\training\shop\payments\UUIDPaymentIdGenerator.java
+C:\Users\andre\IdeaProjects\spring-masterclass\src\main\java\pl\training\shop\common\FastMoneyUserType.java
 C:\Users\andre\IdeaProjects\spring-masterclass\src\main\java\pl\training\shop\common\PagedResult.java
 C:\Users\andre\IdeaProjects\spring-masterclass\src\main\java\pl\training\shop\payments\PaymentStatusChangedListener.java

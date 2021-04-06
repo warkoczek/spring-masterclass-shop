@@ -5,6 +5,7 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 import pl.training.shop.orders.Order;
 import pl.training.shop.payments.*;
 import pl.training.shop.products.Product;
+import pl.training.shop.products.ProductType;
 
 import java.util.List;
 
@@ -16,12 +17,14 @@ public class Application {
             .name("Spring masterclass")
             .description("Spring framework practical course")
             .price(LocalMoney.of(999))
+            .type(ProductType.VIDEO)
             .build();
 
     private static final Product BOOK_PRODUCT = Product.builder()
             .name("Spring guide")
             .description("Exercises to do")
             .price(LocalMoney.of(99))
+            .type(ProductType.BOOK)
             .build();
 
     public static void main(String[] args) {

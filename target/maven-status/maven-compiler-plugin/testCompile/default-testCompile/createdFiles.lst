@@ -1,4 +1,3 @@
 pl\training\shop\payments\UUIDPaymentIdGeneratorTest.class
-pl\training\shop\payments\PaymentRepositoryTest.class
 pl\training\shop\payments\FakePaymentServiceTest.class
 pl\training\shop\payments\IncrementalPaymentIdGeneratorTest.class
