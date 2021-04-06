@@ -6,7 +6,6 @@ import org.springframework.context.annotation.EnableAspectJAutoProxy;
 
 import javax.persistence.EntityManager;
 
-@EnableAspectJAutoProxy
 @Configuration
 public class OrderConfiguration {
 

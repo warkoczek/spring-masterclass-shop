@@ -19,10 +19,11 @@ import java.util.List;
 @NoArgsConstructor
 @Data
 public class Order {
-    @GeneratedValue
+
     @Id
+    @GeneratedValue
     private Long id;
-    @ManyToMany(cascade = CascadeType.PERSIST, fetch = FetchType.EAGER)
+    @ManyToMany(cascade = CascadeType.MERGE, fetch = FetchType.EAGER)
     @NotEmpty
     @NonNull
     private List<Product> products;
