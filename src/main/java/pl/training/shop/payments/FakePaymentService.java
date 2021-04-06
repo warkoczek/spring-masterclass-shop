@@ -1,7 +1,5 @@
 package pl.training.shop.payments;
 
-
-
 import lombok.RequiredArgsConstructor;
 import lombok.extern.java.Log;
 import org.springframework.context.ApplicationEventPublisher;
