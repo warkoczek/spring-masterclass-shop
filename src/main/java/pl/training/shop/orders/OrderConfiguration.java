@@ -10,11 +10,6 @@ import javax.persistence.EntityManager;
 public class OrderConfiguration {
 
     @Bean
-    public OrderRepository orderRepository(){
-        return new JpaOrderRepository();
-    }
-
-    @Bean
     public OrderService orderService(OrderRepository orderRepository){
         return new OrderService(orderRepository);
     }
