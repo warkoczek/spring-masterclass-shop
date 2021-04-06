@@ -1,10 +1,8 @@
 package pl.training.shop.products;
 
-import pl.training.shop.common.PagedResult;
+import org.springframework.data.jpa.repository.JpaRepository;
 
-public interface ProductRepository {
+public interface ProductRepository extends JpaRepository<Product, Long> {
 
-    Product save(Product product);
 
-    PagedResult<Product> findAll(int pageNumber, int pageSize);
 }
