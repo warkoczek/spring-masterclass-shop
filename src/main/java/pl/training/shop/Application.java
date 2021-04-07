@@ -27,6 +27,13 @@ public class Application {
             .type(ProductType.BOOK)
             .build();
 
+    private static final Product AUDIO_PRODUCT = Product.builder()
+            .name("Spring Cache")
+            .description("Caching makes it easy")
+            .price(LocalMoney.of(230))
+            .type(ProductType.AUDIO)
+            .build();
+
     public static void main(String[] args) {
         try(AnnotationConfigApplicationContext applicationContext = new AnnotationConfigApplicationContext(BASE_PACKAGE)){
             var shopService = applicationContext.getBean(ShopService.class);
@@ -40,6 +47,10 @@ public class Application {
             log.info(payment.getId());
 
             log.info(shopService.getByName("Spring").toString());
+            log.info(shopService.getByName("Spring").toString());
+
+            shopService.addProduct(AUDIO_PRODUCT);
+
             log.info(shopService.getByName("Spring").toString());
 
         }

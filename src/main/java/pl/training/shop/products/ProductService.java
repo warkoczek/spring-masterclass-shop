@@ -2,6 +2,7 @@ package pl.training.shop.products;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.java.Log;
+import org.springframework.cache.annotation.CacheEvict;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
@@ -18,6 +19,7 @@ public class ProductService {
 
     private final ProductRepository productRepository;
 
+    @CacheEvict("products")
     @Retry
     public Product add(Product product){
         return productRepository.save(product);
