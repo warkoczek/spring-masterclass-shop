@@ -3,6 +3,9 @@ package pl.training.shop;
 import com.zaxxer.hikari.HikariDataSource;
 import org.hibernate.jpa.HibernatePersistenceProvider;
 import org.springframework.beans.factory.config.PropertiesFactoryBean;
+import org.springframework.cache.CacheManager;
+import org.springframework.cache.annotation.EnableCaching;
+import org.springframework.cache.concurrent.ConcurrentMapCacheManager;
 import org.springframework.context.MessageSource;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -17,6 +20,9 @@ import org.springframework.orm.jpa.JpaTransactionManager;
 import org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean;
 import org.springframework.transaction.PlatformTransactionManager;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
+import pl.training.shop.orders.OrderService;
+import pl.training.shop.payments.PaymentService;
+import pl.training.shop.products.ProductService;
 
 import javax.persistence.EntityManagerFactory;
 import javax.sql.DataSource;
@@ -26,8 +32,19 @@ import java.util.Properties;
 @EnableAspectJAutoProxy
 @EnableTransactionManagement
 @EnableJpaRepositories(basePackages = "pl.training.shop")
+@EnableCaching
 @Configuration
 public class ShopConfiguration {
+
+    @Bean
+    public CacheManager cacheManager(){
+        return new ConcurrentMapCacheManager("products");
+    }
+
+    @Bean
+    public ShopService shopService(OrderService orderService, PaymentService paymentService, ProductService productService){
+        return new ShopService(orderService, paymentService, productService);
+    }
 
     @Bean
     public MessageSource messageSource(){
