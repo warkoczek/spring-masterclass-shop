@@ -22,7 +22,7 @@ public class UserService {
 
     }
     public PagedResult<User> getByLastName(String lastNameFragment, int pageNumber, int pageSize){
-        var userPage = userRepository.findByLastNameContaining(lastNameFragment, (Pageable) PageRequest.of(pageNumber, pageSize));
+        var userPage = userRepository.findByLastNameContaining(lastNameFragment, PageRequest.of(pageNumber, pageSize));
         return new PagedResult<>(userPage.getContent(), pageNumber, userPage.getTotalPages());
     }
 
