@@ -47,10 +47,7 @@ public class Application {
             log.info(payment.getId());
 
             log.info(shopService.getByName("Spring").toString());
-            log.info(shopService.getByName("Spring").toString());
-
             shopService.addProduct(AUDIO_PRODUCT);
-
             log.info(shopService.getByName("Spring").toString());
 
         }
