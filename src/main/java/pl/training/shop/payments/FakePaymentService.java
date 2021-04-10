@@ -5,13 +5,13 @@ package pl.training.shop.payments;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.java.Log;
 import org.springframework.context.ApplicationEventPublisher;
-import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 import pl.training.shop.common.profiler.ExecutionTime;
 
 import java.time.Instant;
+@Transactional
 @Log
 @RequiredArgsConstructor
-@Service
 public class FakePaymentService implements PaymentService {
 
     private final PaymentIdGenerator paymentIdGenerator;
