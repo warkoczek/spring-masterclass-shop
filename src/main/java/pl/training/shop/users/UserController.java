@@ -3,12 +3,14 @@ package pl.training.shop.users;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 import pl.training.shop.common.PagedResult;
 import pl.training.shop.common.web.ExceptionTransferObject;
 import pl.training.shop.common.web.PagedResultTransferObject;
 import pl.training.shop.common.web.UriBuilder;
 
+import javax.validation.Valid;
 import java.net.URI;
 
 @RequestMapping("api/users")
@@ -21,7 +23,10 @@ public class UserController {
     private UriBuilder uriBuilder = new UriBuilder();
 
     @PostMapping
-    public ResponseEntity<UserTransferObject> addUser(@RequestBody UserTransferObject userTransferObject){
+    public ResponseEntity<UserTransferObject> addUser(@Valid @RequestBody UserTransferObject userTransferObject, BindingResult bindingResult){
+        if(bindingResult.hasErrors()){
+            return ResponseEntity.badRequest().build();
+        }
         User user = userMapper.toUser(userTransferObject);
         Long userId = userService.add(user).getId();
         URI locationUri = uriBuilder.requestUriWithId(userId);

@@ -1,3 +1,4 @@
+C:\Users\andre\IdeaProjects\spring-masterclass\src\main\java\pl\training\shop\common\web\ExceptionTransferObject.java
 C:\Users\andre\IdeaProjects\spring-masterclass\src\main\java\pl\training\shop\common\validator\ModelValidator.java
 C:\Users\andre\IdeaProjects\spring-masterclass\src\main\java\pl\training\shop\payments\PaymentRequest.java
 C:\Users\andre\IdeaProjects\spring-masterclass\src\main\java\pl\training\shop\payments\LocalMoney.java
@@ -20,6 +21,7 @@ C:\Users\andre\IdeaProjects\spring-masterclass\src\main\java\pl\training\shop\co
 C:\Users\andre\IdeaProjects\spring-masterclass\src\main\java\pl\training\shop\orders\Order.java
 C:\Users\andre\IdeaProjects\spring-masterclass\src\main\java\pl\training\shop\payments\IdGenerator.java
 C:\Users\andre\IdeaProjects\spring-masterclass\src\main\java\pl\training\shop\common\LoggingBeanPostProcessor.java
+C:\Users\andre\IdeaProjects\spring-masterclass\src\main\java\pl\training\shop\common\web\GlobalExceptionHandler.java
 C:\Users\andre\IdeaProjects\spring-masterclass\src\main\java\pl\training\shop\products\ProductRepository.java
 C:\Users\andre\IdeaProjects\spring-masterclass\src\main\java\pl\training\shop\payments\LogPayments.java
 C:\Users\andre\IdeaProjects\spring-masterclass\src\main\java\pl\training\shop\users\UserNotFoundException.java
