@@ -2,13 +2,11 @@ package pl.training.shop.users;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.PageRequest;
-import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import pl.training.shop.common.PagedResult;
 
 @Transactional
 @RequiredArgsConstructor
-@Service
 public class UserService {
 
     private final UserRepository userRepository;

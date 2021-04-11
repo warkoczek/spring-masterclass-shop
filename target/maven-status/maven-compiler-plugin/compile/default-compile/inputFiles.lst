@@ -14,6 +14,7 @@ C:\Users\andre\IdeaProjects\spring-masterclass\src\main\java\pl\training\shop\us
 C:\Users\andre\IdeaProjects\spring-masterclass\src\main\java\pl\training\shop\common\CommonConfiguration.java
 C:\Users\andre\IdeaProjects\spring-masterclass\src\main\java\pl\training\shop\products\ProductConfiguration.java
 C:\Users\andre\IdeaProjects\spring-masterclass\src\main\java\pl\training\shop\orders\OrderConfiguration.java
+C:\Users\andre\IdeaProjects\spring-masterclass\src\main\java\pl\training\shop\common\UriBuilder.java
 C:\Users\andre\IdeaProjects\spring-masterclass\src\main\java\pl\training\shop\common\profiler\ExecutionTime.java
 C:\Users\andre\IdeaProjects\spring-masterclass\src\main\java\pl\training\shop\payments\Payment.java
 C:\Users\andre\IdeaProjects\spring-masterclass\src\main\java\pl\training\shop\orders\Order.java
@@ -32,6 +33,8 @@ C:\Users\andre\IdeaProjects\spring-masterclass\src\main\java\pl\training\shop\co
 C:\Users\andre\IdeaProjects\spring-masterclass\src\main\java\pl\training\shop\payments\PaymentStatus.java
 C:\Users\andre\IdeaProjects\spring-masterclass\src\main\java\pl\training\shop\products\ProductService.java
 C:\Users\andre\IdeaProjects\spring-masterclass\src\main\java\pl\training\shop\users\UserConfiguration.java
+C:\Users\andre\IdeaProjects\spring-masterclass\src\main\java\pl\training\shop\users\UserTransferObject.java
+C:\Users\andre\IdeaProjects\spring-masterclass\src\main\java\pl\training\shop\users\UserMapper.java
 C:\Users\andre\IdeaProjects\spring-masterclass\src\main\java\pl\training\shop\common\validator\InvalidOrderException.java
 C:\Users\andre\IdeaProjects\spring-masterclass\src\main\java\pl\training\shop\common\retry\MethodExecutor.java
 C:\Users\andre\IdeaProjects\spring-masterclass\src\main\java\pl\training\shop\orders\OrderService.java

@@ -1,6 +1,5 @@
-package pl.training.shop.common;
+package pl.training.shop.common.web;
 
-import org.springframework.stereotype.Component;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 import java.net.URI;
