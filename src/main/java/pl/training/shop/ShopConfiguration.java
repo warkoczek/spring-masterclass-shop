@@ -42,11 +42,6 @@ public class ShopConfiguration {
     }
 
     @Bean
-    public ShopService shopService(OrderService orderService, PaymentService paymentService, ProductService productService){
-        return new ShopService(orderService, paymentService, productService);
-    }
-
-    @Bean
     public MessageSource messageSource(){
         ResourceBundleMessageSource messageSource = new ResourceBundleMessageSource();
         messageSource.setBasename("messages");
