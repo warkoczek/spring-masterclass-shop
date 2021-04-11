@@ -14,9 +14,9 @@ C:\Users\andre\IdeaProjects\spring-masterclass\src\main\java\pl\training\shop\us
 C:\Users\andre\IdeaProjects\spring-masterclass\src\main\java\pl\training\shop\common\CommonConfiguration.java
 C:\Users\andre\IdeaProjects\spring-masterclass\src\main\java\pl\training\shop\products\ProductConfiguration.java
 C:\Users\andre\IdeaProjects\spring-masterclass\src\main\java\pl\training\shop\orders\OrderConfiguration.java
-C:\Users\andre\IdeaProjects\spring-masterclass\src\main\java\pl\training\shop\common\UriBuilder.java
 C:\Users\andre\IdeaProjects\spring-masterclass\src\main\java\pl\training\shop\common\profiler\ExecutionTime.java
 C:\Users\andre\IdeaProjects\spring-masterclass\src\main\java\pl\training\shop\payments\Payment.java
+C:\Users\andre\IdeaProjects\spring-masterclass\src\main\java\pl\training\shop\common\web\UriBuilder.java
 C:\Users\andre\IdeaProjects\spring-masterclass\src\main\java\pl\training\shop\orders\Order.java
 C:\Users\andre\IdeaProjects\spring-masterclass\src\main\java\pl\training\shop\payments\IdGenerator.java
 C:\Users\andre\IdeaProjects\spring-masterclass\src\main\java\pl\training\shop\common\LoggingBeanPostProcessor.java
@@ -28,6 +28,7 @@ C:\Users\andre\IdeaProjects\spring-masterclass\src\main\java\pl\training\shop\co
 C:\Users\andre\IdeaProjects\spring-masterclass\src\main\java\pl\training\shop\common\PagedResult.java
 C:\Users\andre\IdeaProjects\spring-masterclass\src\main\java\pl\training\shop\products\ProductRepositoryCustom.java
 C:\Users\andre\IdeaProjects\spring-masterclass\src\main\java\pl\training\shop\payments\PaymentStatusChangedListener.java
+C:\Users\andre\IdeaProjects\spring-masterclass\src\main\java\pl\training\shop\common\web\PagedResultTransferObject.java
 C:\Users\andre\IdeaProjects\spring-masterclass\src\main\java\pl\training\shop\products\ProductType.java
 C:\Users\andre\IdeaProjects\spring-masterclass\src\main\java\pl\training\shop\common\validator\Validate.java
 C:\Users\andre\IdeaProjects\spring-masterclass\src\main\java\pl\training\shop\payments\PaymentStatus.java

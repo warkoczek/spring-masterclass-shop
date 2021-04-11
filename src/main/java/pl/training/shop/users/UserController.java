@@ -1,9 +1,11 @@
 package pl.training.shop.users;
 
 import lombok.RequiredArgsConstructor;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import pl.training.shop.common.PagedResult;
+import pl.training.shop.common.web.ExceptionTransferObject;
 import pl.training.shop.common.web.PagedResultTransferObject;
 import pl.training.shop.common.web.UriBuilder;
 
@@ -41,5 +43,11 @@ public class UserController {
             @RequestParam(defaultValue = "5") int pageSize){
         PagedResult<User> users = userService.getByLastName(lastNameFragment, pageNumber, pageSize);
         return userMapper.toUserTransferObjectsPage(users);
+    }
+
+    @ExceptionHandler(UserNotFoundException.class)
+    public ResponseEntity<ExceptionTransferObject> onUserNotFound(UserNotFoundException exception){
+        return ResponseEntity.status(HttpStatus.NOT_FOUND)
+                .body(new ExceptionTransferObject("User not found"));
     }
 }
