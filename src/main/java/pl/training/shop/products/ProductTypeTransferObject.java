@@ -1,4 +1,6 @@
 package pl.training.shop.products;
 
-public class ProductTypeTransferObject {
+public enum ProductTypeTransferObject {
+
+    EBOOK, MUSIC, VIDEO
 }
