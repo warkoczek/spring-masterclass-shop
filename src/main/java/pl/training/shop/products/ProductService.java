@@ -31,6 +31,10 @@ public class ProductService {
         return productRepository.findAllByNameContaining(name);
     }
 
+    public Product getById(Long id){
+        return productRepository.findById(id).orElseThrow(ProductNotFoundException::new);
+    }
+
     public PagedResult<Product> getAll(int pageNumber, int pageSize){
         Page<Product> productPage = productRepository.findAll(PageRequest.of(pageNumber, pageSize));
         return new PagedResult<>(productPage.getContent(), pageNumber, productPage.getTotalPages());

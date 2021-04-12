@@ -1,9 +1,13 @@
 package pl.training.shop.products;
 
 import lombok.RequiredArgsConstructor;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.http.ResponseEntity;
+import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.*;
+import pl.training.shop.common.web.PagedResultTransferObject;
 import pl.training.shop.common.web.UriBuilder;
+
+import javax.validation.Valid;
 
 @RequestMapping(name = "api/products")
 @RestController
@@ -13,4 +17,22 @@ public class ProductController {
     private final ProductService productService;
     private final ProductMapper productMapper;
     private final UriBuilder uriBuilder = new UriBuilder();
+
+    @PostMapping
+    public ResponseEntity<ProductTransferObject> addProduct(@Valid @RequestBody ProductTransferObject productTransferObject
+            , BindingResult bindingResult){
+        if(bindingResult.hasErrors()){
+            return ResponseEntity.badRequest().build();
+        }
+        var product = productMapper.toProduct(productTransferObject);
+        var productId = product.getId();
+        var locationUri = uriBuilder.requestUriWithId(productId);
+        return ResponseEntity.created(locationUri).build();
+    }
+
+    @GetMapping
+    public PagedResultTransferObject<ProductTransferObject> getProducts(@RequestParam int pageNumber, @RequestParam int pageSize){
+        var products = productService.getAll(pageNumber, pageSize);
+        return productMapper.toProductTransferObjectsPage(products);
+    }
 }

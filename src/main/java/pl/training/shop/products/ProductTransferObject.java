@@ -1,12 +1,13 @@
 package pl.training.shop.products;
 
 import lombok.Data;
+import org.springframework.hateoas.RepresentationModel;
 
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.Size;
 
 @Data
-public class ProductTransferObject {
+public class ProductTransferObject extends RepresentationModel<ProductTransferObject> {
 
     @NotEmpty
     private String name;
