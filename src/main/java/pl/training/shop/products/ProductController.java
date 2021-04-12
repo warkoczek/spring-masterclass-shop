@@ -4,6 +4,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 import pl.training.shop.common.web.PagedResultTransferObject;
 import pl.training.shop.common.web.UriBuilder;
 
@@ -34,5 +35,13 @@ public class ProductController {
     public PagedResultTransferObject<ProductTransferObject> getProducts(@RequestParam int pageNumber, @RequestParam int pageSize){
         var products = productService.getAll(pageNumber, pageSize);
         return productMapper.toProductTransferObjectsPage(products);
+    }
+
+    //Check MvcConfiguration and WebInitializer config
+    @RequestMapping(value = "{id}/files", method = RequestMethod.POST)
+    public String submit(@PathVariable Long id, @RequestParam MultipartFile file){
+        //save file to some kind of storage
+        return "File " + file.getOriginalFilename() + " uploaded";
+
     }
 }
