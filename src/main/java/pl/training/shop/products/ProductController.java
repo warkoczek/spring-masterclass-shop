@@ -32,7 +32,7 @@ public class ProductController {
     }
 
     @GetMapping
-    public PagedResultTransferObject<ProductTransferObject> getProducts(@RequestParam int pageNumber, @RequestParam int pageSize){
+    public PagedResultTransferObject<ProductTransferObject> getProducts(@RequestParam(defaultValue = "0") int pageNumber, @RequestParam(defaultValue = "5") int pageSize){
         var products = productService.getAll(pageNumber, pageSize);
         return productMapper.toProductTransferObjectsPage(products);
     }
