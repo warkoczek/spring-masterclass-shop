@@ -1,7 +1,7 @@
 package pl.training.shop.users;
 
-import jdk.jfr.Name;
 import lombok.*;
+import pl.training.shop.common.validator.Name;
 
 import javax.persistence.*;
 import javax.validation.constraints.Pattern;
@@ -22,6 +22,7 @@ public class User {
     @Column(name = "first_name", nullable = false)
     private String firstName;
     @Column(name = "last_name", nullable = false)
+    @Name
     private String lastName;
     @Column(unique = true, nullable = false)
     private String email;
