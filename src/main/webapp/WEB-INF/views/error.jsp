@@ -14,7 +14,7 @@
 <body>
 <%@ include file="menu.jsp"%>
 <div class="container">
-    <s:message arguments="${message}"/>
+    <s:message code="error" arguments="${message}"/>
 </div>
 </body>
 </html>
