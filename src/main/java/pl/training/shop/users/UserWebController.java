@@ -14,6 +14,13 @@ public class UserWebController {
     private final UserService userService;
     private final UserMapper userMapper;
 
+    @GetMapping("add-user.html")
+    public ModelAndView addUser(){
+        ModelAndView modelAndView = new ModelAndView("add-user");
+        modelAndView.addObject(new User());
+        return modelAndView;
+    }
+
     @GetMapping("show-users.html")
     public ModelAndView showUsers(@RequestParam(defaultValue = "0") int pageNumber
             , @RequestParam(defaultValue = "5") int pageSize){
