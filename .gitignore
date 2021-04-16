@@ -2,4 +2,4 @@
 data
 target
 .idea
-.iml
+*.iml

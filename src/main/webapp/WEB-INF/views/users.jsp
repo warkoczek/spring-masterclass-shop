@@ -8,5 +8,10 @@
 </head>
 <body>
 <%@include file="menu.jsp"%>
+    <div class="container">
+        <table class="table">
+
+        </table>
+    </div>
 </body>
 </html>
