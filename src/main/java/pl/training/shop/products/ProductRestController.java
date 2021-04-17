@@ -13,7 +13,7 @@ import javax.validation.Valid;
 @RequestMapping(name = "api/products")
 @RestController
 @RequiredArgsConstructor
-public class ProductController {
+public class ProductRestController {
 
     private final ProductService productService;
     private final ProductMapper productMapper;
