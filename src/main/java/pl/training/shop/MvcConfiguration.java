@@ -37,6 +37,14 @@ public class MvcConfiguration implements WebMvcConfigurer {
     }
 
     @Override
+    public void addCorsMappings(CorsRegistry registry) {
+        registry.addMapping("/api/**")
+                .allowedMethods("*")
+                .allowedHeaders("*")
+                .allowedOrigins("http://localhost:4200");
+    }
+
+    @Override
     public void addViewControllers(ViewControllerRegistry registry) {
         registry.addViewController("/").setViewName("index");
         registry.addViewController("index.html").setViewName("index");
