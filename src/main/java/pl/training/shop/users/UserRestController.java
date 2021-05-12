@@ -14,7 +14,7 @@ import pl.training.shop.common.web.UriBuilder;
 import javax.validation.Valid;
 import java.net.URI;
 
-@RequestMapping(name = "${apiPrefix}/users")
+@RequestMapping("${apiPrefix}/users")
 @RestController
 @RequiredArgsConstructor
 public class UserRestController {

@@ -12,7 +12,7 @@ import pl.training.shop.common.web.UriBuilder;
 import javax.validation.Valid;
 import java.net.URI;
 
-@RequestMapping(name = "${apiPrefix}/orders")
+@RequestMapping("${apiPrefix}/orders")
 @RestController
 @RequiredArgsConstructor
 public class OrderController {
