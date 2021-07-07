@@ -1,11 +1,7 @@
 package pl.training.shop.orders;
 
-import java.util.Optional;
+import org.springframework.data.jpa.repository.JpaRepository;
 
-public interface OrderRepository {
-    Order save(Order order);
+public interface OrderRepository extends JpaRepository<Order, Long> {
 
-    Optional<Order> findById(Long id);
-
-    void update(Order oder);
 }

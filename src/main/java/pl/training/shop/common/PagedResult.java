@@ -1,5 +1,6 @@
 package pl.training.shop.common;
 
+import lombok.Data;
 import lombok.Value;
 
 import java.util.List;
